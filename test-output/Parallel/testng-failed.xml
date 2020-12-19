@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [Parallel]" parallel="tests">
+  <parameter name="environment" value="ie"/>
+  <parameter name="config" value="parallel.conf.json"/>
+  <test name="SingleTestChrome(failed)" parallel="tests">
+    <parameter name="environment" value="chrome"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="scenarios.Flipkart">
+        <methods>
+          <include name="launchAndNavigateToFlipkart"/>
+          <include name="handleLoginPoup"/>
+        </methods>
+      </class> <!-- scenarios.Flipkart -->
+    </classes>
+  </test> <!-- SingleTestChrome(failed) -->
+  <test name="SingleTestSafari(failed)" parallel="tests">
+    <parameter name="environment" value="safari"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="scenarios.Flipkart">
+        <methods>
+          <include name="launchAndNavigateToFlipkart"/>
+          <include name="handleLoginPoup"/>
+        </methods>
+      </class> <!-- scenarios.Flipkart -->
+    </classes>
+  </test> <!-- SingleTestSafari(failed) -->
+  <test name="SingleTestIE(failed)" parallel="tests">
+    <parameter name="environment" value="ie"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="scenarios.Flipkart">
+        <methods>
+          <include name="launchAndNavigateToFlipkart"/>
+          <include name="handleLoginPoup"/>
+          <include name="fetchResults"/>
+        </methods>
+      </class> <!-- scenarios.Flipkart -->
+    </classes>
+  </test> <!-- SingleTestIE(failed) -->
+  <test name="SingleTestFirefox(failed)" parallel="tests">
+    <parameter name="environment" value="firefox"/>
+    <parameter name="config" value="parallel.conf.json"/>
+    <classes>
+      <class name="scenarios.Flipkart">
+        <methods>
+          <include name="launchAndNavigateToFlipkart"/>
+          <include name="handleLoginPoup"/>
+          <include name="fetchResults"/>
+        </methods>
+      </class> <!-- scenarios.Flipkart -->
+    </classes>
+  </test> <!-- SingleTestFirefox(failed) -->
+</suite> <!-- Failed suite [Parallel] -->
